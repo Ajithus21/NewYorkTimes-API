@@ -1,13 +1,18 @@
 <div class="row m-4" >
-    <div *ngFor="let data of myData" class="card m-3 bg-dark text-light" style="width: 18rem; " id="cont">
+    <div *ngFor="let data of pageOfItems" class="card m-3 bg-dark text-light" style="width: 18rem; " id="cont">
         <img class="card-img-top" *ngIf="data.multimedia != null" src={{data.multimedia[0].url}} >
         <img class="card-img-top" *ngIf="data.multimedia == null" src="https://lh3.googleusercontent.com/proxy/bRh-yfljUoq5OVve5GLjUOZWNPTiQleJV1bNci_qTX_RCOBH11ieKuB5I0n83YGFa9oKuYRU6278CO9At-2-NIbK4Te2D6Uf85oGnr7JUeCMN76oM4U" >
         <div class="card-body">
           <h5 class="card-title">{{data.title}}</h5>
           <p class="card-text">{{data.abstract}}</p>
-          <a href="{{data.url}}" target= "blank" class="btn btn-primary">Coninue Reading</a>
+          <a href="{{data.url}}" target= "blank" class="btn btn-primary">Continue Reading</a>
         </div>
       </div>
 </div>
+
+<div *ngIf = "myData" class="text-center">
+  <app-pagination [items]="myData" (changePage)="onChangePage($event)"></app-pagination>
+</div>
+
 
 

@@ -7,7 +7,8 @@ import { NytService } from '../nyt.service';
 	styleUrls: [ './us.component.css' ]
 })
 export class UsComponent implements OnInit {
-	myData;
+	myData: Array<any>;
+	pageOfItems: Array<any>;
 	constructor(private nytService: NytService) {
 		this.nytService.getus().subscribe((data) => {
 			this.myData = data.results;
@@ -16,4 +17,8 @@ export class UsComponent implements OnInit {
 	}
 
 	ngOnInit(): void {}
+
+	onChangePage(pageOfItems: Array<any>) {
+		this.pageOfItems = pageOfItems;
+	}
 }

@@ -9,9 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { ArtsComponent } from './arts/arts.component';
 import { ScienceComponent } from './science/science.component';
 import { UsComponent } from './us/us.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
-	declarations: [ AppComponent, NavbarComponent, HomeComponent, ArtsComponent, ScienceComponent, UsComponent ],
+	declarations: [ AppComponent, NavbarComponent, HomeComponent, ArtsComponent, ScienceComponent, UsComponent, PaginationComponent ],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
